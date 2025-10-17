@@ -1,0 +1,40 @@
+{
+  "db_name": "PostgreSQL",
+  "query": "\n        SELECT\n            b.amount as balance,\n            a.mintAddress as token_mint,\n            a.symbol,\n            a.decimals\n        FROM \"Balance\" b\n        JOIN \"User\" u ON b.userId = u.id\n        JOIN \"Asset\" a ON b.assetId = a.id\n        WHERE u.publickey = $1\n        ORDER BY b.amount DESC\n        ",
+  "describe": {
+    "columns": [
+      {
+        "ordinal": 0,
+        "name": "balance",
+        "type_info": "Int8"
+      },
+      {
+        "ordinal": 1,
+        "name": "token_mint",
+        "type_info": "Text"
+      },
+      {
+        "ordinal": 2,
+        "name": "symbol",
+        "type_info": "Text"
+      },
+      {
+        "ordinal": 3,
+        "name": "decimals",
+        "type_info": "Int4"
+      }
+    ],
+    "parameters": {
+      "Left": [
+        "Text"
+      ]
+    },
+    "nullable": [
+      false,
+      false,
+      false,
+      false
+    ]
+  },
+  "hash": "804a051cdb1ad644f55724bc3b7f71a8a7a4eabe059ed269737bf93c7385a1f9"
+}

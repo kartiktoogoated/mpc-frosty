@@ -1,0 +1,6 @@
+[workspace]
+resolver = "2"
+members = ["backend", "indexer", "mpc", "store"]
+
+[workspace.dependencies]
+zeroize = "1.3"

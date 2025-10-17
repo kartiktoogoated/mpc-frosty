@@ -1,0 +1,20 @@
+{
+  "db_name": "PostgreSQL",
+  "query": "SELECT publickey FROM \"User\"",
+  "describe": {
+    "columns": [
+      {
+        "ordinal": 0,
+        "name": "publickey",
+        "type_info": "Text"
+      }
+    ],
+    "parameters": {
+      "Left": []
+    },
+    "nullable": [
+      false
+    ]
+  },
+  "hash": "c4e8bdf3e31f8930e6877fdb7a904cb14e2cf76033c7dbd2674fb479d0722ada"
+}

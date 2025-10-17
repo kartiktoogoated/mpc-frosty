@@ -1,0 +1,9 @@
+target/
+.env
+.DS_Store
+.idea/
+.vscode/
+.cursorrules
+.cursorignore
+.cursorignore
+Cargo.lock

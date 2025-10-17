@@ -1,0 +1,15 @@
+{
+  "db_name": "PostgreSQL",
+  "query": "\n                            UPDATE \"Balance\"\n                            SET amount = $1, updatedAt = NOW()\n                            WHERE userId = (SELECT id FROM \"User\" WHERE publicKey = $2)\n                            AND assetId = (SELECT id FROM \"Asset\" WHERE mintAddress = 'So11111111111111111111111111111111111111112')\n                            ",
+  "describe": {
+    "columns": [],
+    "parameters": {
+      "Left": [
+        "Int8",
+        "Text"
+      ]
+    },
+    "nullable": []
+  },
+  "hash": "3faacadd8356f58408fc1e3fbdd5817313c7dd42422c9f63c4e657b9edf82ab9"
+}

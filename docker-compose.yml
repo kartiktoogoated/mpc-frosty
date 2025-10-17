@@ -1,0 +1,44 @@
+services:
+  pg_mpc1:
+    image: postgres:15
+    container_name: pg_mpc1
+    environment:
+      POSTGRES_USER: mpc
+      POSTGRES_PASSWORD: mpcpass
+      POSTGRES_DB: mpc1
+    ports:
+      - "5433:5432"
+    volumes:
+      - pgdata_mpc1:/var/lib/postgresql/data
+      - ./store/migrations:/docker-entrypoint-initdb.d:ro
+
+  pg_mpc2:
+    image: postgres:15
+    container_name: pg_mpc2
+    environment:
+      POSTGRES_USER: mpc
+      POSTGRES_PASSWORD: mpcpass
+      POSTGRES_DB: mpc2
+    ports:
+      - "5434:5432"
+    volumes:
+      - pgdata_mpc2:/var/lib/postgresql/data
+      - ./store/migrations:/docker-entrypoint-initdb.d:ro
+
+  pg_mpc3:
+    image: postgres:15
+    container_name: pg_mpc3
+    environment:
+      POSTGRES_USER: mpc
+      POSTGRES_PASSWORD: mpcpass
+      POSTGRES_DB: mpc3
+    ports:
+      - "5435:5432"
+    volumes:
+      - pgdata_mpc3:/var/lib/postgresql/data
+      - ./store/migrations:/docker-entrypoint-initdb.d:ro
+
+volumes:
+  pgdata_mpc1:
+  pgdata_mpc2:
+  pgdata_mpc3:
